@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 
 import Main from './components/main/main';
 import Boost from './components/boost/boost';
+import Earn from './components/earn/earn';
 
 import { DefaultIcons } from './components/shared/defaultIcons';
 
@@ -40,7 +41,7 @@ export default function Home() {
           <Boost />
         </div>
         <div key={2} className="min-w-full flex flex-col justify-end">
-          <Main />
+          <Earn />
         </div>
         <div key={3} className="min-w-full flex flex-col justify-end">
           <Main />
