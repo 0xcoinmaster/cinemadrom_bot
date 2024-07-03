@@ -2,8 +2,12 @@
 
 import Footer from "../shared/footer";
 import Image from "next/image";
+import { useRouterContext } from '../providers/routerProvider';
 
 const Boost = () => {
+
+  const { setRouter } = useRouterContext();
+
   return (
     <main className="flex flex-col justify-center items-center max-w-[432px] mx-auto my-0 text-white py-[5px] mt-[30px]">
       <h3 className="text-white text-[35px] font-medium">Boost</h3>
@@ -22,7 +26,7 @@ const Boost = () => {
             <p className="text-[#F5D62F] text-[28px] font-medium">Mining Time</p>
             <p className="text-[15px] font-medium">Increase the mining time:</p>
             <div className="flex items-center">
-              <Image src="/MVH logo.png" width={40} height={40} className="mr-2" alt="MVH logo"/>
+              <Image src="/MVH logo.png" width={40} height={40} className="mr-2" alt="MVH logo" />
               <p className="text-[14px] font-medium">L1 - 6 hour / 7 days</p>
             </div>
           </div>
@@ -36,7 +40,7 @@ const Boost = () => {
             <p className="text-[#2FD2F5] text-[28px] font-medium">Mining Time</p>
             <p className="text-[15px] font-medium">Increase the mining time:</p>
             <div className="flex items-center">
-              <Image src="/MVH logo.png" width={40} height={40} className="mr-2" alt="MVH logo"/>
+              <Image src="/MVH logo.png" width={40} height={40} className="mr-2" alt="MVH logo" />
               <p className="text-[14px] font-medium">L2 - 12 hour / 7 days</p>
             </div>
           </div>
@@ -50,7 +54,7 @@ const Boost = () => {
             <p className="text-[#F766C6] text-[28px] font-medium">Mining Power</p>
             <p className="text-[15px] font-medium">Increase mining power:</p>
             <div className="flex items-center">
-              <Image src="/MVH logo.png" width={40} height={40} className="mr-2" alt="MVH logo"/>
+              <Image src="/MVH logo.png" width={40} height={40} className="mr-2" alt="MVH logo" />
               <p className="text-[14px] font-medium">L3 - 0.04 MVH / hour</p>
             </div>
           </div>
@@ -58,14 +62,14 @@ const Boost = () => {
         </div>
       </section>
       <section className="w-[380px] h-[120px] bg-gradient-to-r from-[#0B07C7] to-[#F51A35] p-[1px] rounded-[20px]">
-        <div className="flex justify-between items-center w-full h-full bg-[#352F4D] rounded-[20px] px-4">
+        <button className="flex justify-between items-center w-full h-full bg-[#352F4D] rounded-[20px] px-4" onClick={() => setRouter("/missions")}>
           <Image src="/MVH logo.png" width={60} height={60} alt="MVH logo" />
           <div className="flex flex-col">
             <p className="text-[#1DE0D4] text-[28px] font-medium text-center">Missions</p>
             <p className="text-[13px] font-medium">Complete Missions and get MVH</p>
           </div>
           <Image src="/Layer 2.png" width={42} height={42} alt="Arrow" />
-        </div>
+        </button>
       </section>
       <Footer />
     </main>

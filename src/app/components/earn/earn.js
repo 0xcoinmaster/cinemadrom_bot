@@ -3,8 +3,12 @@
 import Footer from "../shared/footer";
 import Action from "./action";
 import Image from "next/image";
+import { useRouterContext } from "../providers/routerProvider";
 
 const Earn = () => {
+
+  const { setRouter } = useRouterContext();
+
   return (
     <main className="flex flex-col justify-center items-center max-w-[432px] mx-auto my-0 text-white py-[5px] mt-[30px]">
       <h3 className="text-white text-[35px] font-medium mb-1">Earn</h3>
@@ -16,7 +20,9 @@ const Earn = () => {
       </section>
       <Action src="/hand.png" width={61} height={34} desc="PARTNER (invite a friend) - 0.5 MVH" />
       <Action src="/NFT market Logo.png" width={45} height={45} desc="NFT MARKET (NFT purchase) - 10 MVH" />
-      <Action src="/Like Logo.png" width={45} height={45} desc="MISSIONS on Social Networks - 0.4 MVH" />
+      <button onClick={() => setRouter('/missions')}>
+        <Action src="/Like Logo.png" width={45} height={45} desc="MISSIONS on Social Networks - 0.4 MVH" />
+      </button>
       <Action src="/arrow.png" width={45} height={45} desc="Other Missions" />
       <Action src="/arrow.png" width={45} height={45} desc="Other Missions" />
       <Action src="/arrow.png" width={45} height={45} desc="Other Missions" />

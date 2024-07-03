@@ -2,15 +2,19 @@
 
 import Image from "next/image";
 import Footer from "../shared/footer";
+import { useRouterContext } from "../providers/routerProvider";
 
 const Main = () => {
+
+  const { setRouter } = useRouterContext();
+
   return (
     <main className="flex flex-col justify-center items-center max-w-[432px] mx-auto my-0 text-white py-[5px] mt-[30px]">
       <section className="w-[380px] h-[175px] bg-gradient-to-l from-[#F3B77E] to-[#9D7935] p-[1px] rounded-[15px]">
         <div className="flex flex-col justify-center items-center w-full h-full bg-gradient-to-r from-[#585977] to-[#272735] rounded-[15px]">
           <div className="flex justify-between items-start w-full px-2">
             <div className='flex items-center'>
-              <Image src="/1.png" width={68} height={68} alt="AI movie"/>
+              <Image src="/1.png" width={68} height={68} alt="AI movie" />
               <div className='pl-1'>
                 <p className='text-[19px] font-semibold'>Hi, Adam Barlow</p>
                 <p className='text-[15px] font-[200]'>Welcome Back!</p>
@@ -20,9 +24,9 @@ const Main = () => {
               <div className='bg-[#D9D9D9] border-[#F5A4A4] border-2 p-[5px] rounded-[9px]'>
                 <Image src="/Rules.png" width={35} height={35} alt="Rules" />
               </div>
-              <div className='bg-[#D9D9D9] border-[#A9DD3C] border-2 p-[5px] rounded-[9px]'>
+              <button className='bg-[#D9D9D9] border-[#A9DD3C] border-2 p-[5px] rounded-[9px]' onClick={() => setRouter("/account")}>
                 <Image src="/Vector.png" width={37} height={37} alt="Vector" />
-              </div>
+              </button>
             </div>
           </div>
           <p className='flex items-start text-[15px] w-full font-medium pl-[57px]'>Total <span className='text-[#E974F3] px-2'>MVH</span> mining Balance:</p>

@@ -14,17 +14,19 @@ const Footer = () => {
         {
           DefaultIcons.map((item, index) => {
             if (item.path == router) {
-              return (
-                <button key={index} className='flex items-center justify-center w-[51px] h-[47px] bg-[#D9D9D9] rounded-[50%]' onClick={() => setRouter(item.path)}>
-                  <Image src={ActiveIcons[router]} width={item.width} height={item.height} alt='Nav buttons' />
-                </button>
-              );
+              if(item.img)
+                return (
+                  <button key={index} className='flex items-center justify-center w-[51px] h-[47px] bg-[#D9D9D9] rounded-[50%]' onClick={() => setRouter(item.path)}>
+                    <Image src={ActiveIcons[router]} width={item.width} height={item.height} alt='Nav buttons' />
+                  </button>
+                );
             } else {
-              return (
-                <button key={index} onClick={() => setRouter(item.path)}>
-                  <Image src={item.img} width={item.width} height={item.height} alt='Nav buttons' />
-                </button>
-              );
+              if(item.img)
+                return (
+                  <button key={index} onClick={() => setRouter(item.path)}>
+                    <Image src={item.img} width={item.width} height={item.height} alt='Nav buttons' />
+                  </button>
+                );
             }
           })
         }
