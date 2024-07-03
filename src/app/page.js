@@ -10,6 +10,7 @@ import Main from './components/main/main';
 import Boost from './components/boost/boost';
 import Earn from './components/earn/earn';
 import Invite from './components/invite/invite';
+import Statistics from './components/statistics/statistics';
 
 import { DefaultIcons } from './components/shared/defaultIcons';
 
@@ -48,7 +49,7 @@ export default function Home() {
           <Invite />
         </div>
         <div key={4} className="min-w-full flex flex-col justify-end">
-          <Main />
+          <Statistics />
         </div>
       </div>
     </div>
