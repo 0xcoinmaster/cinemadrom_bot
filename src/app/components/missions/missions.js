@@ -11,7 +11,7 @@ const Missions = () => {
 
   return (
     <main className="max-w-[432px] mx-auto my-0 text-white py-[5px] mt-[30px]">
-      <div className={`${router == '/missions' ? 'animate-fadeEffect' : ''} flex flex-col justify-center items-center`}>
+      <div className={`${router == '/missions' && 'animate-fadeEffect'} flex flex-col justify-center items-center`}>
         <h3 className="text-white text-[35px] font-medium mb-1">Missions</h3>
         <Image src="/logo CINEMADROM AI Movie (250x250) 1.png" width={100} height={100} alt="Cinemadrom Ai movie" />
         <p className="text-[#57D14C] text-[25px] font-medium mb-3 mt-2">CINEMADROM metaverse</p>

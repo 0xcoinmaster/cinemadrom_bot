@@ -2,12 +2,9 @@
 
 import Footer from "../shared/footer";
 import Image from "next/image";
+import { formatNumber } from "../shared/functions";
 
-const Statistics = () => {
-
-  const formatNumber = (number) => {
-    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-  }
+const Statistics = () => {  
 
   return (
     <main className="flex flex-col justify-center items-center max-w-[432px] mx-auto my-0 text-white py-[5px] mt-[30px]">

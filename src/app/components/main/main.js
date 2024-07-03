@@ -21,9 +21,9 @@ const Main = () => {
               </div>
             </div>
             <div className='flex items-center gap-4'>
-              <div className='bg-[#D9D9D9] border-[#F5A4A4] border-2 p-[5px] rounded-[9px]'>
+              <button className='bg-[#D9D9D9] border-[#F5A4A4] border-2 p-[5px] rounded-[9px]' onClick={() => setRouter("/rules")}>
                 <Image src="/Rules.png" width={35} height={35} alt="Rules" />
-              </div>
+              </button>
               <button className='bg-[#D9D9D9] border-[#A9DD3C] border-2 p-[5px] rounded-[9px]' onClick={() => setRouter("/account")}>
                 <Image src="/Vector.png" width={37} height={37} alt="Vector" />
               </button>
@@ -56,9 +56,9 @@ const Main = () => {
           </div>
           <p className='font-light text-[15px]'>0.01 <span className='text-[#E974F3]'>MVH</span> / 1 hour</p>
           <div className='flex justify-between w-full px-2'>
-            <button className='w-[85px] h-[35px] bg-[#F7C08E] border-[#CB7334] border-2 rounded-[15px] font-medium text-[18px] text-black'>Earn</button>
+            <button className='w-[85px] h-[35px] bg-[#F7C08E] border-[#CB7334] border-2 rounded-[15px] font-medium text-[18px] text-black' onClick={() => setRouter('/earn')}>Earn</button>
             <button className='w-[150px] h-[35px] bg-[#F7C08E] border-[#CB7334] border-2 rounded-[15px] font-medium text-[18px] text-black'>Claim</button>
-            <button className='w-[85px] h-[35px] bg-[#F7C08E] border-[#CB7334] border-2 rounded-[15px] font-medium text-[18px] text-black'>Boost</button>
+            <button className='w-[85px] h-[35px] bg-[#F7C08E] border-[#CB7334] border-2 rounded-[15px] font-medium text-[18px] text-black' onClick={() => setRouter('/boost')}>Boost</button>
           </div>
         </div>
         <Image src="/Block Minings.png" width={380} height={168} className='absolute top-0 z-0' alt="Block Minings" />
@@ -67,7 +67,10 @@ const Main = () => {
         <div className='w-full h-full bg-gradient-to-l from-[#667A85] to-[#192A37] rounded-[15px]'>
           <div className='w-full h-full flex justify-between items-center'>
             <div className='flex flex-col justify-between h-full py-3 pl-3'>
-              <button className='flex flex-col justify-center items-center text-[15px] font-medium text-black w-[75px] h-[68px] bg-[#F7C4EC] border-[#CB7334] border-2 rounded-[15px]'>
+              <button 
+                className='flex flex-col justify-center items-center text-[15px] font-medium text-black w-[75px] h-[68px] bg-[#F7C4EC] border-[#CB7334] border-2 rounded-[15px]'
+                onClick={() => setRouter('/pre-sale')}>
+
                 <Image src="/Sale.png" width={40} height={40} alt="Sale" />
                 Pre-Sale
               </button>

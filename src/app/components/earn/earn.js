@@ -18,7 +18,9 @@ const Earn = () => {
         <p className="text-[13px] font-medium">Click on the buttons with Missions in Cinemadrom Ecosystem.</p>
         <p className="text-[13px] font-medium">Earn extra MovieCash (MVH) tokens.</p>
       </section>
-      <Action src="/hand.png" width={61} height={34} desc="PARTNER (invite a friend) - 0.5 MVH" />
+      <button onClick={() => setRouter('/friends')}>
+        <Action src="/hand.png" width={61} height={34} desc="PARTNER (invite a friend) - 0.5 MVH" />
+      </button>
       <Action src="/NFT market Logo.png" width={45} height={45} desc="NFT MARKET (NFT purchase) - 10 MVH" />
       <button onClick={() => setRouter('/missions')}>
         <Action src="/Like Logo.png" width={45} height={45} desc="MISSIONS on Social Networks - 0.4 MVH" />
