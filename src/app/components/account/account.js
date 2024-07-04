@@ -3,7 +3,7 @@
 import Footer from "../shared/footer";
 import Image from "next/image";
 import { useRouterContext } from "../providers/routerProvider";
-import { useState } from "react";
+import { useState, useEffect } from "react";   
 
 const Account = () => {
 
