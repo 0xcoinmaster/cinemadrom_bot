@@ -1,25 +1,19 @@
 import React from 'react';
 import GeeTest from 'react-geetest-v4';
-import { useRouterContext } from '../providers/routerProvider';
 
 
-
-export default function Geetest() {
+export default function Geetest({ verify, children }) {
     const captchaRef = React.useRef(null);
 
-    const { setCaptcha } = useRouterContext();
-
     return (
-        <div className='flex flex-col justify-end items-center h-[100vh]'>
+        <div>
             <GeeTest
                 ref={captchaRef}
                 captchaId={process.env.NEXT_PUBLIC_GEETEST_ID}
                 product={'bind'}
-                onSuccess={() => setCaptcha(true)}
+                onSuccess={() => verify()}
             >
-                <div className='flex justify-center items-center w-full mb-10'>
-                    <button className='text-white text-3xl'>Verify you human</button>
-                </div>
+                {children}
             </GeeTest>
         </div>
     );

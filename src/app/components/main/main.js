@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import Footer from "../shared/footer";
+import { useGeeTest } from 'react-geetest-v4';
 import { useRouterContext } from "../providers/routerProvider";
+import { useEffect, useState } from "react";
 
 export const metadata = {
   title: 'Cinemadrom',
@@ -12,6 +14,23 @@ export const metadata = {
 const Main = () => {
 
   const { setRouter } = useRouterContext();
+  const [mining, setMining] = useState('Start');
+
+  const { captcha, state } = useGeeTest(process.env.NEXT_PUBLIC_GEETEST_ID, {
+    product: 'bind',
+    protocol: 'https://',
+    containerId: 'geetest-captcha',
+  });
+
+  const startMining = () => {
+    if(mining == 'Start')
+      captcha?.showCaptcha();
+  }
+
+  useEffect(() => {
+    if(state == "success")
+      setMining('Claim')
+  }, [state])
 
   return (
     <main className="flex flex-col justify-center items-center max-w-[432px] mx-auto my-0 text-white py-[5px] mt-[30px]">
@@ -52,7 +71,7 @@ const Main = () => {
         <Image src="/Baner 2 NFT Movie.png" width={194} height={128} alt="Baner NFT Movie" />
       </section>
       <section className="w-[380px] h-[186px] relative grid mb-2">
-        <div className='flex flex-col justify-between items-center z-20 pt-[15px] pb-[10px]'>
+        <div className='flex flex-col justify-between items-center z-30 pt-[15px] pb-[10px]'>
           <p className='text-[#F9D61B] text-[18px] font-medium'>100 % Filled in 1 hours</p>
           <div className='flex items-center justify-between w-full px-5'>
             <Image src="/MVH logo.png" width={60} height={60} alt="MVH logo" />
@@ -62,7 +81,10 @@ const Main = () => {
           <p className='font-light text-[15px]'>0.01 <span className='text-[#E974F3]'>MVH</span> / 1 hour</p>
           <div className='flex justify-between w-full px-2'>
             <button className='w-[85px] h-[35px] bg-[#F7C08E] border-[#CB7334] border-2 rounded-[15px] font-medium text-[18px] text-black' onClick={() => setRouter('/earn')}>Earn</button>
-            <button className='w-[150px] h-[35px] bg-[#F7C08E] border-[#CB7334] border-2 rounded-[15px] font-medium text-[18px] text-black'>Claim</button>
+
+
+            <button className='w-[150px] h-[35px] bg-[#F7C08E] border-[#CB7334] border-2 rounded-[15px] font-medium text-[18px] text-black' onClick={() => startMining()}>{mining}</button>
+
             <button className='w-[85px] h-[35px] bg-[#F7C08E] border-[#CB7334] border-2 rounded-[15px] font-medium text-[18px] text-black' onClick={() => setRouter('/boost')}>Boost</button>
           </div>
         </div>
@@ -72,7 +94,7 @@ const Main = () => {
         <div className='w-full h-full bg-gradient-to-l from-[#667A85] to-[#192A37] rounded-[15px]'>
           <div className='w-full h-full flex justify-between items-center'>
             <div className='flex flex-col justify-between h-full py-3 pl-3'>
-              <button 
+              <button
                 className='flex flex-col justify-center items-center text-[15px] font-medium text-black w-[75px] h-[68px] bg-[#F7C4EC] border-[#CB7334] border-2 rounded-[15px]'
                 onClick={() => setRouter('/pre-sale')}>
 
@@ -89,6 +111,7 @@ const Main = () => {
         </div>
       </section>
       <Footer />
+
     </main>
   )
 }

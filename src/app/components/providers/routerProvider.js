@@ -12,10 +12,9 @@ export function useRouterContext() {
 export function RouterProvider({ children }) {
 
     const [router, setRouter] = useState("/");
-    const [captcha, setCaptcha] = useState(false);
 
     return (
-        <RouterContext.Provider value={{ router, setRouter, captcha, setCaptcha }}>
+        <RouterContext.Provider value={{ router, setRouter }}>
             {children}
         </RouterContext.Provider>
     );

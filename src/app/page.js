@@ -24,9 +24,10 @@ const inter = Inter({ subsets: ['latin'] });
 
 export default function Home() {
 
-  const { router, captcha } = useRouterContext();
+  const { router } = useRouterContext();
 
   const [currentIndex, setCurrentIndex] = useState(2);
+  const [captcha, setCaptcha] = useState(false);
 
   useEffect(() => {
     DefaultIcons.map((item) => {
@@ -38,7 +39,7 @@ export default function Home() {
 
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto overflow-hidden">
+    <div className="relative w-full max-w-3xl mx-auto overflow-hidden relative">
       {
         captcha == true ?
           <div className={`flex transition-transform ${currentIndex == 0 || currentIndex == 1 || currentIndex == 7 || currentIndex == 8 ? "duration-0" : "duration-500"}`}
@@ -71,9 +72,11 @@ export default function Home() {
               <PreSale />
             </div>
           </div> :
-
-          <Geetest />
-
+          <Geetest verify={() => setCaptcha(true)} >
+            <div className='flex flex-col justify-center items-center w-full h-[100vh]'>
+              <button className='text-white text-3xl'>Verify you human</button>
+            </div>
+          </Geetest>
       }
     </div>
   );
