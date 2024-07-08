@@ -2,6 +2,8 @@ import React from 'react';
 import GeeTest from 'react-geetest-v4';
 import { useRouterContext } from '../providers/routerProvider';
 
+
+
 export default function Geetest() {
     const captchaRef = React.useRef(null);
 
@@ -11,7 +13,7 @@ export default function Geetest() {
         <div className='flex flex-col justify-end items-center h-[100vh]'>
             <GeeTest
                 ref={captchaRef}
-                captchaId={'617daf72146bd4694b17b3bd20597e33'}
+                captchaId={process.env.NEXT_PUBLIC_GEETEST_ID}
                 product={'bind'}
                 onSuccess={() => setCaptcha(true)}
             >

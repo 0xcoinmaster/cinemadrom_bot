@@ -1,8 +1,13 @@
-'use client'
+
 
 import Image from "next/image";
 import Footer from "../shared/footer";
 import { useRouterContext } from "../providers/routerProvider";
+
+export const metadata = {
+  title: 'Cinemadrom',
+  description: 'Cinemadrom ',
+}
 
 const Main = () => {
 

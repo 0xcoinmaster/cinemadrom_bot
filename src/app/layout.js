@@ -4,6 +4,11 @@ import Loading from "./components/loading/loading";
 import { RouterProvider } from './components/providers/routerProvider';
 import "./globals.css";
 
+export const metadata = {
+  title: 'Cinemadrom',
+  description: 'Cinemadrom ',
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

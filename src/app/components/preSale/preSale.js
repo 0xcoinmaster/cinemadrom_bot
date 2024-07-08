@@ -1,4 +1,3 @@
-'use client'
 
 import Footer from "../shared/footer";
 import { useRouterContext } from "../providers/routerProvider";
