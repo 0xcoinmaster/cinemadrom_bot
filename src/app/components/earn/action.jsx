@@ -1,5 +1,5 @@
-
-import Image from "next/image";
+import Image from 'next/image';
+import PropTypes from 'prop-types';
 
 const Action = ({ src, width, height, desc }) => {
   return (
@@ -15,6 +15,13 @@ const Action = ({ src, width, height, desc }) => {
       </div>
     </section>
   );
-}
+};
+
+Action.propTypes = {
+  src: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  desc: PropTypes.string,
+};
 
 export default Action;

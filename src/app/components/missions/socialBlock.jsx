@@ -1,9 +1,8 @@
-
-import Image from "next/image";
-import { useState } from "react";
+import Image from 'next/image';
+import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const SocialBlock = ({ src, desc, width, height, first, second }) => {
-
   const [user, setUser] = useState('');
   const [link, setLink] = useState('');
 
@@ -14,7 +13,11 @@ const SocialBlock = ({ src, desc, width, height, first, second }) => {
           <div className="flex justify-between items-center w-full">
             <div className="flex items-center">
               <Image src={src} width={width} height={height} alt={src} />
-              <p className={`text-[${src == "/telegram.png" ? "11px" : "13px"}] font-medium ml-4`}>{desc}</p>
+              <p
+                className={`text-[${src == '/telegram.png' ? '11px' : '13px'}] font-medium ml-4`}
+              >
+                {desc}
+              </p>
             </div>
             <Image src="/Arrow2.png" width={30} height={30} alt="Arrow" />
           </div>
@@ -25,16 +28,26 @@ const SocialBlock = ({ src, desc, width, height, first, second }) => {
           className="w-[140px] h-[21px] outline-0 text-black text-[12px] font-medium bg-[#BFC0C5] placeholder:text-[#7D7B81] px-2 rounded-[15px]"
           placeholder={first}
           value={user}
-          onChange={(e) => setUser(e.target.value)} />
+          onChange={(e) => setUser(e.target.value)}
+        />
         <input
-          className={`w-[210px] h-[21px] outline-0 text-black text-[${src == "/telegram.png" ? "11px] px-1" : "12px] px-3"} font-medium bg-[#BFC0C5] placeholder:text-[#7D7B81] rounded-[15px]`}
+          className={`w-[210px] h-[21px] outline-0 text-black text-[${src == '/telegram.png' ? '11px] px-1' : '12px] px-3'} font-medium bg-[#BFC0C5] placeholder:text-[#7D7B81] rounded-[15px]`}
           placeholder={second}
           value={link}
-          onChange={(e) => setLink(e.target.value)} />
+          onChange={(e) => setLink(e.target.value)}
+        />
       </div>
-
     </section>
-  )
-}
+  );
+};
+
+SocialBlock.propTypes = {
+  src: PropTypes.string,
+  desc: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
+  first: PropTypes.string,
+  second: PropTypes.string,
+};
 
 export default SocialBlock;
