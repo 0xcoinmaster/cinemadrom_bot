@@ -6,7 +6,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Cinemadrom',
-  description: 'Cinemadrom ',
+  description: 'Cinemadrom telegram bot',
 };
 
 export default function RootLayout({ children }) {
