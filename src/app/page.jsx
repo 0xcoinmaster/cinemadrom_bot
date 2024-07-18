@@ -2,7 +2,6 @@
 
 import { useRouterContext } from './components/providers/routerProvider';
 import { useState, useEffect } from 'react';
-
 import Main from './components/main/main';
 import Boost from './components/boost/boost';
 import Earn from './components/earn/earn';
