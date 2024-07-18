@@ -17,6 +17,7 @@ const Main = () => {
     protocol: 'https://',
     containerId: 'geetest-captcha',
   });
+  
   const startMining = () => {
     if (mining == 'Start') captcha && captcha.showCaptcha();
   };
