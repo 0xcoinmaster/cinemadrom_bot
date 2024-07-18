@@ -8,7 +8,6 @@ export const metadata = {
   title: 'Cinemadrom',
   description: 'Cinemadrom ',
 };
-
 const Main = () => {
   const { setRouter } = useRouterContext();
   const [mining, setMining] = useState('Start');
@@ -18,7 +17,6 @@ const Main = () => {
     protocol: 'https://',
     containerId: 'geetest-captcha',
   });
-
   const startMining = () => {
     if (mining == 'Start') captcha && captcha.showCaptcha();
   };
